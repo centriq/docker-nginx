@@ -1,0 +1,13 @@
+diff -urN nginx-1.9.11.orig/debian/rules nginx-1.9.11/debian/rules
+--- nginx-1.9.11.orig/debian/rules	2016-02-09 18:00:11.000000000 +0000
++++ nginx-1.9.11/debian/rules	2016-03-03 17:46:19.745181226 +0000
+@@ -58,7 +58,8 @@
+ 		$(WITH_HTTP2) \
+ 		--with-cc-opt="$(CFLAGS)" \
+ 		--with-ld-opt="$(LDFLAGS)" \
+-		--with-ipv6
++		--with-ipv6 \
++                --add-module=../nginx-sticky-module-ng
+ 	dh_auto_build
+ 
+ configure_debug:
